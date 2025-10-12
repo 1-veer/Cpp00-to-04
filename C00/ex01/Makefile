@@ -1,12 +1,12 @@
 CC = c++
-Cflags = -Wall -Wextra -Werror -std=c++98
+Cppflags = -Wall -Wextra -Werror -std=c++98
 
 NAME = ex01
 
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(Cflags) *.cpp -o $(NAME)
+	$(CC) $(Cppflags) *.cpp -o $(NAME)
 
 clean:
 	rm -f $(NAME)
