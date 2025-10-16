@@ -1,7 +1,7 @@
 CC = c++
 Cppflags = -Wall -Wextra -Werror -std=c++98
 
-NAME = ex01
+NAME = phonebook
 
 all: $(NAME)
 
