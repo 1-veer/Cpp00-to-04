@@ -1,12 +1,13 @@
-CC = c++
-Cppflags = -Wall -Wextra -Werror -std=c++98
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = phonebook
+NAME = account
+SRCS = Account.cpp tests.cpp
 
 all: $(NAME)
 
-$(NAME):
-	$(CC) $(Cppflags) *.cpp -o $(NAME)
+$(NAME): $(SRCS)
+	$(CXX) $(CXXFLAGS) $(SRCS) -o $(NAME)
 
 clean:
 	rm -f $(NAME)
