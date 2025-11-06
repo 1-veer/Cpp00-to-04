@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abougati <abougati@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 17:01:45 by abougati          #+#    #+#             */
-/*   Updated: 2025/10/16 13:48:51 by abougati         ###   ########.fr       */
+/*   Updated: 2025/11/05 21:06:21 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,27 @@
 #include <iomanip>
 #include <cstring>
 
+std::string parse(std::string str)
+{
+    
+    size_t i = 0;
+    size_t j = 0;
+    size_t k = 0;
+    while (j < str.size() && std::isspace(str[j]))
+        j++;
+    i = j;
+    while (j < str.size() && !std::isspace(str[j]))
+        j++;
+    k = j;
+    while (k < str.size())
+    {
+        if (!std::isspace(str[k]))
+            return ("");
+        k++;
+    }
+    str = str.substr(i,j-i);
+    return (str);
+}  
 class Contact
 {
     private:
@@ -83,6 +104,13 @@ class Phonebook{
         std::cout << "Enter darkest secret : " ;
         std::cin >> secret;
         
+        firstname = parse(firstname);
+        lastname = parse(lastname);
+        nickname = parse(nickname);
+        number = parse(number);
+        secret = parse(secret);
+        
+        
         if (index < 8)
             contacts[index].set_infos(firstname, lastname, nickname, number, secret);
         else 
@@ -148,7 +176,11 @@ int main ()
     {
     std::string s;
     std::cout << "Select (ADD, SEARCH or EXIT): ";
-    std::cin >> s;
+    std::getline(std::cin, s);
+    if (s == "" || s == "\n")
+        continue;
+        
+    s = parse(s);
     if ( s == "ADD" )
         pb.addContact();
      else if (s == "SEARCH" )

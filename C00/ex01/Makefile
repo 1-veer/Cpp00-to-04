@@ -5,8 +5,8 @@ NAME = phonebook
 
 all: $(NAME)
 
-$(NAME):
-	$(CC) $(Cppflags) *.cpp -o $(NAME)
+$(NAME): main.cpp
+	$(CC) $(Cppflags) main.cpp -o $(NAME)
 
 clean:
 	rm -f $(NAME)
