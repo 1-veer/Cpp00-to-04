@@ -1,5 +1,7 @@
 #include "Zombie.hpp"
 
+// order of destruction between the stack ones and heap ones
+
 int main ()
 {
     randomChump("Stack zombie");

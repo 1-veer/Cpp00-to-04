@@ -1,8 +1,8 @@
 #include "HumanA.hpp"
 
 HumanA::HumanA(std::string const name, Weapon &weapon)
-    : name(name), weapon(weapon)
-{
+: name(name), weapon(weapon)           // as a ref it always needs to be set "can't be null or any defualt value"
+{ 
     std::cout << name << " has been created" << std::endl;
 }
 
