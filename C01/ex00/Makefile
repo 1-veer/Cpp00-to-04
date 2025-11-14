@@ -6,7 +6,7 @@
 #    By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/10 22:55:28 by ayoub             #+#    #+#              #
-#    Updated: 2025/11/11 00:36:46 by ayoub            ###   ########.fr        #
+#    Updated: 2025/11/12 04:38:12 by ayoub            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,4 +22,4 @@ $(NAME): $(SRCS)
 clean:
 	rm -f $(NAME)
 re: clean all
-.PHONY: all clean fclean re
+.PHONY: all clean re

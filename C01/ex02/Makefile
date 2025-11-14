@@ -10,4 +10,4 @@ $(NAME): $(SRCS)
 clean:
 	rm -f $(NAME)
 re: clean all
-.PHONY: all clean fclean re
+.PHONY: all clean re

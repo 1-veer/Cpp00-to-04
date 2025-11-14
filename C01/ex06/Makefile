@@ -1,0 +1,13 @@
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+
+NAME = harlFilter
+SRCS = *.cpp
+
+all: $(NAME)
+$(NAME): $(SRCS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(SRCS)
+clean:
+	rm -f $(NAME)
+re: clean all
+.PHONY: all clean re
