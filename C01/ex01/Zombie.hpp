@@ -8,7 +8,7 @@ class Zombie {
 private:
     std::string name;
 public:
-    Zombie (); //default constructor
+    Zombie (); 
     Zombie(std::string name);
     ~Zombie();
     void setName(std::string name);

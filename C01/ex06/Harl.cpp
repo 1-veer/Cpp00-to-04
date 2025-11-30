@@ -31,15 +31,10 @@ void Harl::error( void )
 
 int giveback(std::string level)
 {
-    if (level == "DEBUG")
-        return 1;
-    else if (level == "INFO")
-        return 2;
-    else if (level == "WARNING")
-        return 3;
-    else if (level == "ERROR")
-        return 4;
-    return 0;
+    return (level == "DEBUG") ? 1 :
+           (level == "INFO") ? 2 :
+           (level == "WARNING") ? 3 :
+           (level == "ERROR") ? 4 : 0;
 }
 
 void defaul_t( void )

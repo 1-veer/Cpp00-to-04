@@ -2,11 +2,15 @@
 
 int main ()
 {
-    Zombie *Horde = zombieHorde(5, "ayoub");
-    for (int i=0 ; i < 5 ; i++)
+    int n = 4;
+    Zombie *Horde = zombieHorde(n, "ayoub");
+    if (!Horde)
+        return 1;
+
+    for (int i=0 ; i < n ; i++)
         Horde[i].announce();
 
-    delete[] Horde; //empty cuz c++ already knows the size
-    
+    delete[] Horde; 
+
     return 0;
 }

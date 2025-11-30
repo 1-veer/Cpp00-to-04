@@ -2,9 +2,6 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-// main idea is passing weapon normally in B is just a copy so when we change the originaa it doesnt change
-// meanwhile passing by ref passes the original
-
 int main()
 {
     {

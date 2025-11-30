@@ -2,7 +2,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = harlFilter
-SRCS = *.cpp
+SRCS = Harl.cpp main.cpp
 
 all: $(NAME)
 $(NAME): $(SRCS)

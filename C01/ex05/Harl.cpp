@@ -27,20 +27,15 @@ void Harl::error( void )
 
 int giveback(std::string level)
 {
-    if (level == "DEBUG")
-        return 1;
-    else if (level == "INFO")
-        return 2;
-    else if (level == "WARNING")
-        return 3;
-    else if (level == "ERROR")
-        return 4;
-    return 0;
+    return (level == "DEBUG") ? 1 :
+           (level == "INFO") ? 2 :
+           (level == "WARNING") ? 3 :
+           (level == "ERROR") ? 4 : 0;
 }
 
 void defaul_t( void )
 {
-    std:: cout << "No valid argument, Try either:\n"
+    std:: cout << "Non valid arguments, Try either:\n"
                << "./harl \"DEBUG\" , \"INFO\" , \"WARNING\" or \"ERROR\"" << std::endl;
 }
 
@@ -54,7 +49,7 @@ void Harl::complain( std::string level)
     {
         if (level == all_levels[i])
         {
-           (this->*all_functs[i])();  // this points to the current object of type Harl ()
+           (this->*all_functs[i])();  // this points to the current object of type Harl 
            return;
         }
     }

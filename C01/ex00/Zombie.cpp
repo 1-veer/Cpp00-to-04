@@ -2,7 +2,7 @@
 
 Zombie::Zombie(std::string name) : name(name)
 {
-    // Constructor body (if needed)
+    std::cout << name << " has been created ." << std::endl;
 }
 
 Zombie::~Zombie ()

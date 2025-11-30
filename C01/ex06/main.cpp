@@ -9,7 +9,8 @@ int main (int ac, char *av[])
     }
     else 
     {
-        std::cout << "Invalid number of arguments" << std::endl;
+         std:: cout << "Non valid arguments, Try either:\n"
+               << "./harl \"DEBUG\" , \"INFO\" , \"WARNING\" or \"ERROR\"" << std::endl;
         return 1;
     }
     return 0;

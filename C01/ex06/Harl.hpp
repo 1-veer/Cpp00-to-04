@@ -19,4 +19,6 @@ class Harl
         void complain( std::string level );
 };
 
+void defaul_t( void );
+
 #endif

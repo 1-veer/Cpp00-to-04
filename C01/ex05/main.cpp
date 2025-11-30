@@ -9,7 +9,7 @@ int main (int ac, char *av[])
     }
     else 
     {
-        std::cout << "Invalid number of arguments" << std::endl;
+        defaul_t();
         return 1;
     }
     return 0;

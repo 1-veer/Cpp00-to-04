@@ -2,9 +2,9 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
 
 NAME = violence
-SRCS = *.cpp 
+SRCS = Weapon.cpp HumanA.cpp HumanB.cpp main.cpp
 
-all: $(NAME)
+all: $(NAME) 
 $(NAME): $(SRCS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(SRCS)
 clean:
