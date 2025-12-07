@@ -1,7 +1,7 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = fixed
+NAME = Fixed
 SRCS = Fixed.cpp main.cpp
 
 all: $(NAME)
