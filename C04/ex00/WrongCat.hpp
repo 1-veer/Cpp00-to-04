@@ -1,9 +1,9 @@
 #ifndef WrongCat_HPP
 #define WrongCat_HPP
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class WrongCat : public Animal
+class WrongCat : public WrongAnimal
 {
     protected:
         std::string type;
@@ -13,9 +13,10 @@ class WrongCat : public Animal
         WrongCat(std::string name);
         WrongCat(const WrongCat&other);
         WrongCat& operator=(const WrongCat&other);
-        virtual ~WrongCat();
+        ~WrongCat();
         
         void makeSound() const;
+        std::string getType() const;
 };
 
 #endif
