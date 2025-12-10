@@ -1,6 +1,6 @@
 #include "Character.hpp"
 
-Character::Character(void) : name("defualt")
+Character::Character(void) : name("default")
 {
     for (int i = 0; i < 4; i++)
 		this->inventory[i] = NULL;

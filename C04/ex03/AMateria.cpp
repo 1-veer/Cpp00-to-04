@@ -10,7 +10,6 @@ AMateria::AMateria(std::string const & type) : type(type)
     //std::cout << "AMateria parameterized constructor called.\n";
 }
 
-
 AMateria::AMateria(const AMateria &other) 
 : type(other.type)
 {

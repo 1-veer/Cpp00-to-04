@@ -1,5 +1,5 @@
 CXX = c++
-CXXFlags = -Wall -Wextra -Werror -std=c++98
+CXXFlags = -Wall -Wextra -Werror -std=c++98 #-Wno-delete-non-virtual-dtor
 
 NAME = ex00
 SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp

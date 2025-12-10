@@ -9,6 +9,8 @@ MateriaSource::MateriaSource(void)
 
 MateriaSource::MateriaSource(MateriaSource const &other)
 {
+    for (int i = 0; i < 4; i++)
+		this->learn_inventory[i] = NULL;
     *this = other;
 	// std::cout << "MateriaSource copy constructor called" << std::endl;
 }
