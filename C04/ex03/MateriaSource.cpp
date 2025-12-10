@@ -46,16 +46,18 @@ MateriaSource::~MateriaSource()
 
 void MateriaSource::learnMateria(AMateria *materia)
 {
+    if (!materia)
+        return;
     for(int i=0 ; i<4 ; i++)
     {
         if(learn_inventory[i] == NULL)
         {
             learn_inventory[i] = materia;
-            std::cout << " MateriaSource learns " << materia->getType() << " in slot " << i << "of his learning inverntory " << std::endl;       
+            std::cout << "MateriaSource learns " << materia->getType() << " in slot " << i << " of his learning inverntory " << std::endl;       
             return;
         }
     }
-    std::cout <<" MateriaSource cannot learn " << materia->getType() << " cuz his learning inverntory is full " << std::endl;
+    std::cout <<"MateriaSource cannot learn " << materia->getType() << " cuz his learning inverntory is full " << std::endl;
     delete materia;
 }
 
