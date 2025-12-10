@@ -10,6 +10,7 @@ class AMateria
         std::string type;
         
     public:
+	    AMateria(void);
         AMateria(std::string const & type);
         AMateria(const AMateria&other);
         AMateria& operator=(const AMateria&other);

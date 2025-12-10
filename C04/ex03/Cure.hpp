@@ -9,9 +9,9 @@ class Cure : public AMateria
         Cure();
         Cure(const Cure&other);
         Cure& operator=(const Cure&other);
-        virtual ~Cure();
+        ~Cure();
         
-        AMateria* clone() const;
+        AMateria* clone() const; // can be Ice*
         void use(ICharacter& target);
 };
 
