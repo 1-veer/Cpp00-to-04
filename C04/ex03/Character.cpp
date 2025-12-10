@@ -4,6 +4,8 @@ Character::Character(void) : name("defualt")
 {
     for (int i = 0; i < 4; i++)
 		this->inventory[i] = NULL;
+    for (int i = 0; i < 10; i++)
+        this->unequipped[i] = NULL;
 	//std::cout << "Character default constructor called" << std::endl;
 }
 
@@ -11,13 +13,17 @@ Character::Character(std::string const &name) : name(name)
 {
     for (int i = 0; i < 4; i++)
 		this->inventory[i] = NULL;
+    for (int i = 0; i < 10; i++)
+        this->unequipped[i] = NULL;
 	//std::cout << "Character parameterized constructor called" << std::endl;
 }
 
 Character::Character(Character const &other) //: name(other.name)
 {
-    for (int i = 0; i < 4; i++) // cuz of deleting random value in copy assig op
+    for (int i = 0; i < 4; i++) // initialization cuz of deleting random value in copy assig op
         this->inventory[i] = NULL;
+    for (int i = 0; i < 10; i++) // cuz of deleting random value in copy assig op
+        unequipped[i] = NULL;
     *this = other;
 	//std::cout << "Character copy constructor called" << std::endl;
 }
@@ -38,6 +44,16 @@ Character& Character::operator=(const Character &other)
             else 
                 inventory[i] = NULL;
         }
+        for(int i=0 ; i<10 ; i++)
+        {
+            if (unequipped[i])
+                delete unequipped[i];
+
+            if (other.unequipped[i])
+                unequipped[i] = other.unequipped[i]->clone();
+            else 
+                unequipped[i] = NULL;
+        }
     }
 	return (*this);
 }
@@ -46,8 +62,13 @@ Character::~Character()
 {
     for(int i=0 ; i<4 ; i++)
     {
-        if(inventory[i])
+        if (inventory[i])
             delete inventory[i];
+    }
+    for(int i=0 ; i<10 ; i++)
+    {
+        if (unequipped[i])
+            delete unequipped[i];
     }
 	//std::cout << "Character destructor called" << std::endl;
 }
@@ -64,7 +85,7 @@ void Character::equip(AMateria* m)
         if(inventory[i] == NULL)
         {
             inventory[i] = m;
-            std::cout << name << " equips " << m->getType() << " in slot " << i << "of his inventory " << std::endl;       
+            std::cout << name << " equips " << m->getType() << " in slot " << i << " of his inventory " << std::endl;       
             return;
         }
     }
@@ -77,6 +98,14 @@ void Character::unequip(int idx)
     if (idx >= 0 && idx < 4 && inventory[idx])
     {
         std::cout << name << " unequips slot number " << idx << " of his inventory " << std::endl;
+        for(int i=0 ; i<10 ; i++)
+        {
+            if(unequipped[i] == NULL)
+            {
+                unequipped[i] = inventory[idx];
+                break;
+            }
+        }
         inventory[idx] = NULL;       
     }
     else 
@@ -93,5 +122,5 @@ void Character::use(int idx, ICharacter& target)
         << target.getName() << " (" << inventory[idx]->getType() << ") " << std::endl;
     }
     else
-        std::cout << name << "doesn't use anything and does nothing to "  << target.getName() << std::endl;
+        std::cout << name << " doesn't use anything and does nothing to "  << target.getName() << std::endl;
 }

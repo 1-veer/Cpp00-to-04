@@ -10,6 +10,7 @@ class Character : public ICharacter
     protected:
         std::string	name;
         AMateria *inventory[4];
+        AMateria* unequipped[10];
 
     public:
         Character();
