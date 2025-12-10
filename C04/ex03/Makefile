@@ -1,8 +1,8 @@
 CXX = c++
 CXXFlags = -Wall -Wextra -Werror -std=c++98 #-Wno-delete-non-virtual-dtor
 
-NAME = ex02
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp 
+NAME = ex03
+SRCS = main.cpp 
 
 all : $(NAME)
 $(NAME) : $(SRCS)

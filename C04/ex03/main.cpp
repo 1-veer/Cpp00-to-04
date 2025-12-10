@@ -14,3 +14,5 @@ had add() method and had private int size and AMateria** garbage_coll;
 when inequipping 
 
 */
+
+//add const to operator copy assig
